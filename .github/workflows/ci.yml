@@ -91,6 +91,7 @@ jobs:
     
     - name: Install vcpkg dependencies
       run: |
+        $VCPKG_ROOT/git pull
         $VCPKG_ROOT/vcpkg install libvpx libyuv opus
       shell: bash        
 
