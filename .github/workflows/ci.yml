@@ -83,17 +83,18 @@ jobs:
           # aarch64-unknown-linux-gnu) sudo apt-get -y update ; sudo apt-get -y install gcc-aarch64-linux-gnu ;;
         esac
 
-    - name: Restore from cache and install vcpkg
-      uses: lukka/run-vcpkg@v7
-      with:
-        setupOnly: true
-        vcpkgGitCommitId: '4e485c34f5e056327ef00c14e2e3620bc50de098'
+    #- name: Restore from cache and install vcpkg
+    #  uses: lukka/run-vcpkg@v7
+    #  with:
+    #    setupOnly: true
+    #    vcpkgGitCommitId: '4e485c34f5e056327ef00c14e2e3620bc50de098'
         
-    #- name: Update vcpkg manual under windows
-    #  run: |
-    #   git clone https://github.com/microsoft/vcpkg
-    #    .\vcpkg\bootstrap-vcpkg.bat
-   # shell: bash
+    - name: Update vcpkg manual under macos
+      run: |
+       $ xcode-select --install
+       git clone https://github.com/microsoft/vcpkg
+       .\vcpkg\bootstrap-vcpkg.bat
+      shell: bash
       
     - name: Install vcpkg dependencies
       run: |
