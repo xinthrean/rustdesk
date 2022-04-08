@@ -65,9 +65,9 @@ jobs:
           # - { target: i686-pc-windows-msvc        , os: windows-2019                  }
           # - { target: i686-unknown-linux-gnu      , os: ubuntu-20.04, use-cross: true }
           # - { target: i686-unknown-linux-musl     , os: ubuntu-20.04, use-cross: true }
-          - { target: x86_64-apple-darwin         , os: macos-10.15                   }
+          # - { target: x86_64-apple-darwin         , os: macos-10.15                   }
           # - { target: x86_64-pc-windows-gnu       , os: windows-2019                  }
-          # - { target: x86_64-pc-windows-msvc      , os: windows-2019                  }
+          - { target: x86_64-pc-windows-msvc      , os: windows-2019                  }
           # - { target: x86_64-unknown-linux-gnu    , os: ubuntu-20.04                  }
           # - { target: x86_64-unknown-linux-musl   , os: ubuntu-20.04, use-cross: true }
     steps:
@@ -89,16 +89,17 @@ jobs:
         setupOnly: true
         vcpkgGitCommitId: '4e485c34f5e056327ef00c14e2e3620bc50de098'
         
-    - name: Update vcpkg manual under macos
-      run: |
-       brew install nasm
-       #git clone https://github.com/microsoft/vcpkg
-       #./vcpkg/bootstrap-vcpkg.sh
-      shell: bash
+    #- name: Update vcpkg manual under macos
+    #  run: |
+    #   brew install nasm
+    #   #git clone https://github.com/microsoft/vcpkg
+    #   #./vcpkg/bootstrap-vcpkg.sh
+    #  shell: bash
       
     - name: Install vcpkg dependencies
       run: |
-        $VCPKG_ROOT/vcpkg install libvpx libyuv opus
+        #$VCPKG_ROOT/vcpkg install libvpx libyuv opus
+        $VCPKG_ROOT/vcpkg install libvpx:x64-windows-static libyuv:x64-windows-static opus:x64-windows-static
       shell: bash        
 
     - name: Install Rust toolchain
@@ -187,7 +188,7 @@ jobs:
         name: ${{ matrix.job.target }}
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: /Users/runner/work/rustdesk/
+        path: target/
     # The desired behavior if no files are found using the provided path.
     # - name: Run tests
     #   uses: actions-rs/cargo@v1
