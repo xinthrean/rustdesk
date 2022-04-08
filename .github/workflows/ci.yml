@@ -187,7 +187,7 @@ jobs:
         name: ${{ matrix.job.target }}
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: /Users/runner/work/rustdesk/rustdesk
+        path: /Users/runner/work/rustdesk/
     # The desired behavior if no files are found using the provided path.
     # - name: Run tests
     #   uses: actions-rs/cargo@v1
