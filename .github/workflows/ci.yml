@@ -92,7 +92,7 @@ jobs:
     - name: Update vcpkg manual under macos
       run: |
        git clone https://github.com/microsoft/vcpkg
-       .\vcpkg\bootstrap-vcpkg.bat
+       .\vcpkg\bootstrap-vcpkg.sh
       shell: bash
       
     - name: Install vcpkg dependencies
