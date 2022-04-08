@@ -48,12 +48,12 @@ const CHARS: &'static [char] = &[
 ];
 
 pub const RENDEZVOUS_SERVERS: &'static [&'static str] = &[
-    "rs-ny.rustdesk.com",
-    "rs-sg.rustdesk.com",
-    "rs-cn.rustdesk.com",
+    #"rs-ny.rustdesk.com",
+    #"rs-sg.rustdesk.com",
+    #"rs-cn.rustdesk.com",
 ];
-pub const RENDEZVOUS_PORT: i32 = 21116;
-pub const RELAY_PORT: i32 = 21117;
+pub const RENDEZVOUS_PORT: i32 = 15029;
+pub const RELAY_PORT: i32 = 14848;
 
 #[derive(Clone, Copy, PartialEq, Eq, Debug)]
 pub enum NetworkType {
