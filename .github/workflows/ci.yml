@@ -84,14 +84,13 @@ jobs:
         esac
 
     - name: Restore from cache and install vcpkg
-      uses: lukka/run-vcpkg@v7
+      uses: lukka/run-vcpkg@v10.2
       with:
         setupOnly: true
         vcpkgGitCommitId: '1d4128f08e30cec31b94500840c7eca8ebc579cb'
     
     - name: Install vcpkg dependencies
       run: |
-        $VCPKG_ROOT/git pull
         $VCPKG_ROOT/vcpkg install libvpx libyuv opus
       shell: bash        
 
