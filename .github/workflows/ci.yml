@@ -87,7 +87,7 @@ jobs:
       uses: lukka/run-vcpkg@v7
       with:
         setupOnly: true
-        vcpkgGitCommitId: 'd72783cb3aeddfd667861caef1060e54ca6fa7a9'
+        vcpkgGitCommitId: '4e485c34f5e056327ef00c14e2e3620bc50de098'
         
     #- name: Update vcpkg manual under windows
     #  run: |
