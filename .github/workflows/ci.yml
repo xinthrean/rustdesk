@@ -84,7 +84,7 @@ jobs:
         esac
 
     - name: Restore from cache and install vcpkg
-      uses: lukka/run-vcpkg@v10.2
+      uses: lukka/run-vcpkg@v7
       with:
         setupOnly: true
         vcpkgGitCommitId: 'e8c5185f7a9370b5c251e739d5471366c405e7d8'
