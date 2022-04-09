@@ -191,7 +191,9 @@ jobs:
         use-cross: ${{ matrix.job.use-cross }}
         command: build
         args: --locked --tests --target=${{ matrix.job.target }} 
-    
+      env:
+          LIBCLANG_PATH:  C:\Program Files\LLVM\bin\
+      
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
       with:
