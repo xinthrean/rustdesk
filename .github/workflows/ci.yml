@@ -138,8 +138,6 @@ jobs:
         use-cross: ${{ matrix.job.use-cross }}
         command: build
         args: --locked --release --target=${{ matrix.job.target }}
-      env:
-          LIBCLANG_PATH:  C:\Program Files\LLVM\bin\
 
     # - name: Strip debug information from executable
     #   id: strip
