@@ -185,14 +185,14 @@ jobs:
         unset CARGO_TEST_OPTIONS ; case ${{ matrix.job.target }} in arm-* | aarch64-*) CARGO_TEST_OPTIONS="--lib --bin ${PROJECT_NAME}" ;; esac;
         echo ::set-output name=CARGO_TEST_OPTIONS::${CARGO_TEST_OPTIONS}
 
-    - name: Build tests
-      uses: actions-rs/cargo@v1
-      with:
-        use-cross: ${{ matrix.job.use-cross }}
-        command: build
-        args: --locked --tests --target=${{ matrix.job.target }} 
-      env:
-          LIBCLANG_PATH:  C:\Program Files\LLVM\bin\
+    #- name: Build tests
+    #  uses: actions-rs/cargo@v1
+    #  with:
+    #    use-cross: ${{ matrix.job.use-cross }}
+    #    command: build
+    #    args: --locked --tests --target=${{ matrix.job.target }} 
+    #  env:
+    #      LIBCLANG_PATH:  C:\Program Files\LLVM\bin\
       
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v3.0.0
@@ -201,7 +201,7 @@ jobs:
         name: ${{ matrix.job.target }}
         # optional, default is artifact
         # A file, directory or wildcard pattern that describes what to upload
-        path: target/
+        path: target/${{ matrix.job.target }}/
     # The desired behavior if no files are found using the provided path.
     # - name: Run tests
     #   uses: actions-rs/cargo@v1
