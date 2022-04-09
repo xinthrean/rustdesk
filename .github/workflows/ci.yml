@@ -88,7 +88,12 @@ jobs:
       with:
         setupOnly: true
         vcpkgGitCommitId: '4e485c34f5e056327ef00c14e2e3620bc50de098'
-        
+    - name: Install LLVM and Clang
+      uses: KyleMayes/install-llvm-action@v1.5.2
+      with:
+        # The version of LLVM and Clang binaries to install.
+        version: 12.0.1
+      
     #- name: Update vcpkg manual under macos
     #  run: |
     #   brew install nasm
