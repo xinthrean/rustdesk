@@ -49,11 +49,7 @@ const CHARS: &'static [char] = &[
 
 pub const RENDEZVOUS_SERVERS: &'static [&'static str] = &[
     "relay.ry-tea.com",
-    "cn-gz2-yue3zh7d.frp.cool",
-    "cn-qz1-8iwzyp2h.frp.cool",
-    "cn-qz2-078b7jya.frp.cool",
-    "cn-hn1-xp3a80mp.frp.cool",
-    "cn-gz1-51odci85.frp.cool",
+    
 ];
 pub const RENDEZVOUS_PORT: i32 = 15029;
 pub const RELAY_PORT: i32 = 14848;
